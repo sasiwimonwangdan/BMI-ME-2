@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 
-class SecondActivity : AppCompatActivity() {
+class SecondsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
-
+        setContentView(R.layout.activity_seconds)
         val bmi  = intent.getDoubleExtra("bmi",0.0)
         val result  = intent.getStringExtra("result")
         val height  = intent.getDoubleExtra("height",-1.0)
@@ -40,7 +39,7 @@ class SecondActivity : AppCompatActivity() {
         }
 
         btnExit.setOnClickListener {
-            var Exit = Intent(this@SecondActivity,MainActivity::class.java)
+            var Exit = Intent(this@SecondsActivity,MainActivity::class.java)
 
             startActivity(Exit)
         }

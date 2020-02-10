@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
             hideKeyboard()
 
-            var intent = Intent(this@MainActivity,SecondActivity::class.java)
+            var intent = Intent(this@MainActivity,SecondsActivity::class.java)
             intent.putExtra("bmi",bmi)
             intent.putExtra("result",result)
             intent.putExtra("height",height)
@@ -76,4 +76,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+
 
