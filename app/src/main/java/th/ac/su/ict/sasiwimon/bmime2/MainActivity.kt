@@ -1,7 +1,7 @@
 package th.ac.su.ict.sasiwimon.bmime2
-
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,9 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import java.lang.Math.floor
-import java.math.BigDecimal
-import kotlin.math.round
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,21 +17,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var btn_cal = findViewById<Button>(R.id.btnCal)
+        var tvBmi    = findViewById<TextView>(R.id.tvBmi)
         var tvResult = findViewById<TextView>(R.id.tvResult)
-        var tvResult2 = findViewById<TextView>(R.id.tvResult2)
-        var edtW = findViewById<EditText>(R.id.edtW)
-        var edtH = findViewById<EditText>(R.id.edtH)
 
-        btn_cal.setOnClickListener {
+        var edtHeight = findViewById<EditText>(R.id.edtHeight)
+        var edtWeight = findViewById<EditText>(R.id.edtWeight)
 
+        var btnCal    = findViewById<Button>(R.id.btnCal)
 
-            var w = edtW.text.toString().toDouble()
-            var h = edtH.text.toString().toDouble()
-            h = h/100
+        btnCal.setOnClickListener {
 
-            var bmi:Double = w/(h*h)
+            var weight = edtWeight.text.toString().toDouble()
+            var height = edtHeight.text.toString().toDouble()
+            height     = height/100
 
+            var bmi:Double = weight/(height*height)
 
             var result = "fat"
 
@@ -46,22 +44,26 @@ class MainActivity : AppCompatActivity() {
             else
                 result = "Underweight"
 
-
-
-
-            tvResult.setText("Your bmi is "+bmi.round(2).toString())
-            tvResult2.setText("("+result+")")
+//            tvBmi.setText(bmi.toString())
+//            tvResult.setText(result)
 
             hideKeyboard()
 
+            var intent = Intent(this@MainActivity,SecondActivity::class.java)
+            intent.putExtra("bmi",bmi)
+            intent.putExtra("result",result)
+            intent.putExtra("height",height)
+            intent.putExtra("weight",weight)
+
+            startActivity(intent)
 
         }
-    }
 
+    }
     fun Double.round(decimals: Int): Double {
         var multiplier = 1.0
         repeat(decimals) { multiplier *= 10 }
-        return round(this * multiplier) / multiplier
+        return kotlin.math.round(this * multiplier) / multiplier
     }
 
     fun Activity.hideKeyboard() {
@@ -74,3 +76,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+

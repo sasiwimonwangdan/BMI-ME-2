@@ -1,68 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tvBmi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check your BMI"
         android:layout_marginTop="56dp"
         android:gravity="center"
-        android:id="@+id/tvResult"/>
+        android:textSize="20dp"
+        android:text="Check your BMI"/>
 
     <TextView
+        android:id="@+id/tvResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="..."
         android:gravity="center"
-        android:id="@+id/tvResult2"/>
+        android:text="...."/>
 
     <EditText
+        android:id="@+id/edtHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:hint="your height (cm)"
         android:gravity="center"
+        android:hint="Your height (cm)"
         android:background="@drawable/edittext_ht"
-        android:id="@+id/edtH"/>
+        android:inputType="number"/>
 
     <EditText
+        android:id="@+id/edtWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:hint="your weight (cm)"
         android:gravity="center"
+        android:hint="Your weight (kg)"
         android:background="@drawable/edittext_wt"
-        android:id="@+id/edtW"/>
+        android:inputType="number"/>
 
     <Button
+        android:id="@+id/btnCal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:text="CALCULATE"
-        android:textColor="#fff"
-        android:gravity="center"
-        android:background="@drawable/button1"
-        android:id="@+id/btnCal"/>
+        android:text="Calculate"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button1"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sasiwimon Wangdan - 13610340"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"/>
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="Amaraphon S. - 13610344" />
 
     </RelativeLayout>
 
